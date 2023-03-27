@@ -13,6 +13,8 @@
 		5A55019C29CF9C70000C1430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A55019A29CF9C70000C1430 /* Main.storyboard */; };
 		5A55019E29CF9C73000C1430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A55019D29CF9C73000C1430 /* Assets.xcassets */; };
 		5A5501A129CF9C73000C1430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A55019F29CF9C73000C1430 /* LaunchScreen.storyboard */; };
+		5A5501C929D08C44000C1430 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5501C829D08C44000C1430 /* RatingViewController.swift */; };
+		5A55023729D0D552000C1430 /* EnterRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55023629D0D552000C1430 /* EnterRateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5A55019D29CF9C73000C1430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5501A029CF9C73000C1430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5501A229CF9C73000C1430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A5501C829D08C44000C1430 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		5A55023629D0D552000C1430 /* EnterRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterRateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		5A55019329CF9C70000C1430 /* MealRater */ = {
 			isa = PBXGroup;
 			children = (
+				5A5501C829D08C44000C1430 /* RatingViewController.swift */,
 				5A55019429CF9C70000C1430 /* AppDelegate.swift */,
 				5A55019629CF9C70000C1430 /* SceneDelegate.swift */,
+				5A55023629D0D552000C1430 /* EnterRateViewController.swift */,
 				5A55019829CF9C70000C1430 /* ViewController.swift */,
 				5A55019A29CF9C70000C1430 /* Main.storyboard */,
 				5A55019D29CF9C73000C1430 /* Assets.xcassets */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A55023729D0D552000C1430 /* EnterRateViewController.swift in Sources */,
 				5A55019929CF9C70000C1430 /* ViewController.swift in Sources */,
+				5A5501C929D08C44000C1430 /* RatingViewController.swift in Sources */,
 				5A55019529CF9C70000C1430 /* AppDelegate.swift in Sources */,
 				5A55019729CF9C70000C1430 /* SceneDelegate.swift in Sources */,
 			);

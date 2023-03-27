@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vxb-7q-PRc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -11,7 +11,7 @@
         <!--Meal Rater-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MealRater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Meal Rater" id="BYZ-38-t0r" customClass="ViewController" customModule="MealRater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                                     <stackView opaque="NO" contentMode="center" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8No-0g-tN8" userLabel="Rating Stack View">
                                         <rect key="frame" x="0.0" y="100" width="333" height="20.333333333333329"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-46-QVY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-46-QVY">
                                                 <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -73,7 +73,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Rate Meal"/>
                                         <connections>
-                                            <segue destination="SI4-ur-BdK" kind="show" id="lVU-NY-Jyi"/>
+                                            <segue destination="SI4-ur-BdK" kind="show" identifier="getDataSegue" id="dCU-2d-FCE"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -88,89 +88,96 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Meal Rater" id="oy8-Oj-DVC"/>
+                    <connections>
+                        <outlet property="selectedRate" destination="24p-k6-vD4" id="sxN-48-aNS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854.19847328244271" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1541" y="18"/>
         </scene>
         <!--Rater-->
         <scene sceneID="mEE-dW-byn">
             <objects>
-                <viewController title="Rater" id="SI4-ur-BdK" sceneMemberID="viewController">
+                <viewController title="Rater" id="SI4-ur-BdK" customClass="EnterRateViewController" customModule="MealRater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u8c-sg-Er0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8YS-f1-vsc">
-                                <rect key="frame" x="40" y="163" width="313" height="32"/>
-                                <segments>
-                                    <segment title="1"/>
-                                    <segment title="2"/>
-                                    <segment title="3"/>
-                                    <segment title="4"/>
-                                    <segment title="5"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" systemColor="linkColor"/>
-                                <connections>
-                                    <action selector="editRateMealBar:" destination="8YJ-Gt-Fzn" eventType="valueChanged" id="Wce-rZ-els"/>
-                                </connections>
-                            </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="144" translatesAutoresizingMaskIntoConstraints="NO" id="qhM-7l-WPY">
-                                <rect key="frame" x="47.666666666666657" y="214" width="297.33333333333337" height="34.333333333333343"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="VPR-XT-oBa">
+                                <rect key="frame" x="48" y="148" width="297" height="100.33333333333331"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwZ-a5-lOy">
-                                        <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8I-Bc-Mk7">
-                                        <rect key="frame" x="220.66666666666666" y="0.0" width="76.666666666666657" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g3u-rn-ffW">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="32"/>
+                                        <segments>
+                                            <segment title="1"/>
+                                            <segment title="2"/>
+                                            <segment title="3"/>
+                                            <segment title="4"/>
+                                            <segment title="5"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="144" translatesAutoresizingMaskIntoConstraints="NO" id="qhM-7l-WPY">
+                                        <rect key="frame" x="0.0" y="66" width="297" height="34.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwZ-a5-lOy">
+                                                <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8I-Bc-Mk7">
+                                                <rect key="frame" x="220.66666666666671" y="0.0" width="76.333333333333343" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <connections>
+                                                    <action selector="buttonSaveClicked:" destination="SI4-ur-BdK" eventType="touchUpInside" id="gTK-Rl-ULr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="g3u-rn-ffW" firstAttribute="top" secondItem="VPR-XT-oBa" secondAttribute="top" constant="40" id="HDV-Fq-yOl"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vCN-Ea-Cri"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vCN-Ea-Cri" firstAttribute="trailing" secondItem="qhM-7l-WPY" secondAttribute="trailing" constant="48" id="7vZ-zC-SZQ"/>
-                            <constraint firstItem="qhM-7l-WPY" firstAttribute="top" secondItem="8YS-f1-vsc" secondAttribute="bottom" constant="20" id="Aoo-5E-a5i"/>
-                            <constraint firstItem="8YS-f1-vsc" firstAttribute="top" secondItem="vCN-Ea-Cri" secondAttribute="top" constant="60" id="RH5-iA-YvC"/>
-                            <constraint firstItem="8YS-f1-vsc" firstAttribute="leading" secondItem="vCN-Ea-Cri" secondAttribute="leading" constant="40" id="bR1-Kx-qzd"/>
-                            <constraint firstItem="vCN-Ea-Cri" firstAttribute="trailing" secondItem="8YS-f1-vsc" secondAttribute="trailing" constant="40" id="idD-fP-NZ8"/>
+                            <constraint firstItem="VPR-XT-oBa" firstAttribute="centerX" secondItem="u8c-sg-Er0" secondAttribute="centerX" id="cVn-y0-MIs"/>
+                            <constraint firstItem="VPR-XT-oBa" firstAttribute="top" secondItem="vCN-Ea-Cri" secondAttribute="top" constant="45" id="ulB-pj-izD"/>
+                            <constraint firstItem="VPR-XT-oBa" firstAttribute="leading" secondItem="vCN-Ea-Cri" secondAttribute="leading" constant="48" id="xSP-0z-Z4T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rate the Meal" id="gcY-fD-ycj"/>
+                    <connections>
+                        <outlet property="scRatingToBeSent" destination="g3u-rn-ffW" id="Vik-Px-r2p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCs-fT-7a0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="8YJ-Gt-Fzn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1561.0687022900763" y="18.30985915492958"/>
+            <point key="canvasLocation" x="2487.7862595419847" y="18.30985915492958"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="m4j-hn-hm5">
+        <scene sceneID="yvu-V9-lM1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vxb-7q-PRc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QgV-wm-Ibp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpB-dC-Qq8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K0A-Pw-I9u">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kVJ-7N-Q0Q"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ybx-cO-Y9r"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9HG-o1-BRX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qep-BF-MO7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72.51908396946564" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2312" y="689"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
